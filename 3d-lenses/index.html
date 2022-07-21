@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Making Lenses With a 3D Printer</title>
+        <link href="../style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="content">
+            <h1>Making Lenses With a 3D Printer</h1>
+            <p id="author">Alex Bock</p>
+            <h2>Overview</h2>
+            Here is how I use a standard filament-based 3D printer to create
+            optical lenses:
+
+            <ol>
+                <li>Generate 3D model of desired lens shape</li>
+                <li>Print lens blank in PLA</li>
+                <li>Polish lens blank</li>
+                <li>Cast silicone mold of lens blank</li>
+                <li>Cast epoxy resin in silicone mold</li>
+            </ol>
+
+            <img src="3d-printed-lens-stages.jpeg"
+            alt="Photograph of a large and a small lens in each
+            of three stages: polished, 3D-printed blank; silicone mold;
+            and finished epoxy resin lens" width="100%">
+
+            <h2>Generating the shape</h2>
+            <p>
+            I wrote <a href="lens-spherical.scad">an OpenSCAD script</a> to generate 3D models of spherical lenses.
+            It will generate a model based on the desired lens diameter, lens thickness,
+            and diameter of curvature. An experimental variant for fresnel lenses <a href="fresnel-lens-spherical.scad">is also
+            available</a>.
+            </p>
+
+            <h2>Printing the lens blank</h2>
+            <p>
+            While optimal detail and surface quality would be obtained by generating the lens
+            with a square or hexagonal profile and printing vertically, I have found that
+            printing a round planoconvex lens lying flat at 0.05 mm layer height is acceptable
+            for short focal lengths. For lenses with a focal length beyond 100 mm, or for
+            lenses with a concave surface (which is much more difficult to hand-polish than
+            a convex surface), a square or hexagonal base should be added in OpenSCAD or the
+            slicer to print vertically.
+            </p>
+
+            <h2>Polishing the lens blank</h2>
+            <p>
+            I sand the lens blank by hand with sandpaper in five stages starting at 120 grit and
+            ending at 3000 grit, taking care not to allow folds or flexing in the sandpaper to 
+            create deep scratches. The lens is then given a final polish with a slurry of cerium oxide
+            in distilled water using a cotton ball. The lens is not adequately polished until you can
+            clearly see your reflection when looking straight toward the surface. This is easiest to
+            judge using plain black filament.
+            </p>
+
+            <h2>Casting the silicone mold</h2>
+            <p>
+            I print a thin tray in which to create the silicone mold. The dimensions of the tray
+            are such that the lens can sit on its floor face-up with the walls of the tray extending a few
+            millimeters above the highest point of the lens. Then, I mix a two-part silicone molding compound
+            and slowly pour it onto the lens to fill the mold box, creating an upside silicone mold.
+            This should be done on a level surface. Any silicone spilled after mixing can be easily
+            cleaned off of surfaces once cured.
+            </p>
+            <p>
+            The silicone that I use has a 30-mintue demold time. After removing the lens from the cured mold,
+            you should be able to see a mirror-like reflection in the silicone mold cavity as well. I wait
+            24 hours after pouring before using the mold. The mold should be kept covered or upside down after
+            demolding the lens blank to protect the surface from dust.
+            </p>
+
+            <h2>Casting the final epoxy resin lens</h2>
+            <p>I mix a clear two-part epoxy resin and pour it into the silicone mold. This should be
+                done on a level surface, but note that spilled epoxy resin is very difficult to clean.
+                Small sheets of flat glass removed from picture frames or purchased loose at a hardware store
+                provide cheap, level surfaces to protect your table. After pouring, the mold must be covered
+                (without anything touching the epoxy surface) to prevent dust from falling into the epoxy.
+                Even a small dust particle will create a large defect in the finished surface due to surface
+                tension.
+            </p>
+            <p>The epoxy resin that I use takes 24-48 hours to cure. After the resin is cured, the lens
+                can be removed. If the original lens blank was polished properly, then the epoxy lens
+                will emerge with the same polished surface and be ready to use without further processing.
+                The general performance of a convex lens can be quickly examined by projecting an image of
+                a window or lamp onto a flat, white wall or a sheet of paper.
+            </p>
+
+            <h2>Usage</h2>
+            <p>I used the large objective lens and small eyepiece lens shown in the photo above
+                to print a Keplerian telescope with around 10x magnification. I found the image
+                quality to be quite good for a telescope derived entirely from 3D-printed parts;
+                it is generally usable and capable of resolving distant writing. Of course, using
+                only two spherical lenses made of the same material, it inevitably suffers from
+                spherical and chromatic aberration.
+            </p>
+            <p>
+                Spherical aberration could easily be avoided by printing
+                the lens blank with an aspherical shape (as I do when printing telescope mirrors
+                with the shapes of general conics). I have not tested a solution to chromatic
+                aberration yet, but I expect that it can be dealt with by either including an additive
+                in the epoxy resin to modify the refractive index, or using a different type of
+                resin altogether such as UV-cured acrylic which will
+                almost certainly have a distinct refractive index. Then, standard designs such as an
+                achromatic doublet can be created.
+            </p>
+        </div>
+    </body>
+</html>

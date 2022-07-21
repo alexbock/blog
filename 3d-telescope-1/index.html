@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>First Prototype of a Fully 3D-Printed Telescope with 3D-Printed Mirrors</title>
+        <link href="../style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="content">
+            <h1>First Prototype of a Fully 3D-Printed Telescope with 3D-Printed Mirrors</h1>
+            <p id="author">Alex Bock</p>
+
+            <h2>Overview</h2>
+            <p>I have a made a rough first prototype of a fully 3D-printed telescope
+                with two 3D-printed curved mirrors and no external parts.
+            </p>
+
+            <img src="telescope1.jpeg" width="100%" alt="A photo of the bare telescope with primary and secondary mirrors">
+
+            <h2>Design</h2>
+            <p>
+                This a compact Ritchey–Chrétien design with a concave hyperbolic primary (nearly parabolic)
+                and a convex hyperbolic secondary. The system focal length is 1000 mm and the diameter
+                of the primary mirror is 100 mm. The rear of the telescope has a M42 screw thread mount
+                for connection to a camera and is intended for the flange distance of the Nikon F-mount
+                with an M42 screw thread to F-mount bayonet adapter.
+            </p>
+
+            <img src="telescope2.jpeg" width="100%" alt="A photo of the telescope mounted on a camera.">
+
+            <h2>Mirror Construction</h2>
+            <p>
+                The mirrors were 3D-printed at 0.05 mm layer height with a 0.25 mm nozzle using PLA.
+                To create a smooth surface, a thin level of epoxy resin was applied to the front surfaces
+                and allowed to cure. The reflective coating is a thin layer of chemically applied silver.
+                I tested classic procedures for Tollens' reagent immersion silvering used by astronomers
+                before the adoption of aluminum vacuum deposition, but found the process to be very
+                inconsistent. The mirrors in this prototype were silvered using a two-part "spray silver"
+                forumulation of a similar chemical process ordered from Angel Gilding (no affiliation).
+                The silver and reducer solutions were applied using two ordinary trigger spray
+                bottles.
+            </p>
+
+            <h2>Imaging Test</h2>
+            <p>The image quality from this first prototype is marginal and recognizable targets are just
+                discernible. The silver coating on the micro-smooth epoxy surface is excellent, but the
+                epoxy did not perfectly self-level before curing and the surface contains smooth waves and
+                distortion.
+            </p>
+
+            <p>Here is the image produced by the telescope and a reference photo directly from
+                a standard camera of the same target (an LED corncob light bulb):
+            </p>
+
+            <img src="light-result.JPG" width="100%" alt="A photo from the telescope of a light bulb">
+            <img src="light-comparison.jpeg" width="100%" alt="A reference photo of a light bulb">
+
+            <p>
+                Clearly I still have some work to do...
+            </p>
+
+            <h2>Future Directions</h2>
+            <p>
+                I am currently investigating chemical vapor smoothing of ABS/ASA with acetone and PVB with isopropyl alcohol
+                as an alternative to epoxy coating, and hope to find a procedure to produce quality mirror surfaces for
+                an open-source 3D-printed telescope.
+            </p>
+        </div>
+    </body>
+</html>
