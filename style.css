@@ -14,11 +14,16 @@ h1 {
     padding-bottom: 0px;
 }
 
-#author {
+.info-line {
     margin-top: 0px;
     padding-top: 0.5em;
 }
 
 #article-list li {
     margin-bottom: 0.5em;
+}
+
+.article-date {
+    float: right;
+    font-style: italic;
 }
