@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Spherical Limits and Hyperbolic Lenses</title>
+        <link href="../style.css" rel="stylesheet">
+        <link href="../math.css" rel="stylesheet">
+        <style>
+            .ray-diagram-label {
+                position: absolute;
+                z-index: 50;
+                padding: 0.7em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <h1>Spherical Limits and Hyperbolic Lenses</h1>
+            <p class="info-line">Alex Bock <span class="article-date">2022-08-17</span></p>
+            <h2>Background</h2>
+            <p>
+                Two common topics that often arise when photographers chat about fast
+                lenses are the famous Zeiss 50 mm &fnof;/0.7 lens and the commonly repeated photography
+                "folklore" that the maximum possible f-number for a lens is &fnof;/0.5.
+            </p>
+            <p>
+                The Zeiss 50 mm &fnof;/0.7 continues to be admired for its large maximum aperture because
+                even more than fifty years after its short custom production run, there are no lenses
+                matching this speed commercially available for photographic use on standard full-frame
+                camera bodies. The fastest autofocus lenses available for DSLR and mirrorless cameras
+                have &fnof;/1.2 or &fnof;/1.0 maximum apertures. Several manual focus lenses with &fnof;/0.95 maximum
+                apertures are also available, but entries in this category are either moderately expensive
+                novelties with poor image quality wide open, or sharp wide open but exceptionally expensive
+                statement pieces.
+            </p>
+            <p>
+                As for the often-claimed f/0.5 limit, I imagine that long ago a photographer may have
+                asked someone how large the aperture of a lens could be,
+                and received an answer in the spirit of "For a lens that is practical to manufacture,
+                the limit is f/0.5.", which lost its nuance in every retelling until
+                it took the form often encountered today. The key aspect
+                forgotten over time in this hypothetical origin story is the constraint on being "practical".
+            </p>
+            <h3>Starting With Spheres</h3>
+            <p>
+                What makes a lens practical?
+                First, historically, the constraint that a lens is practical to manufacture would
+                imply that the lens uses only spherical surfaces. One would also expect
+                the lens to be made of glass and used in air (as opposed to underwater or in an oil
+                immersion microscope). From these axioms, the lensmaker's equation can be used to
+                find the maximum aperture geometrically possible for a spherical lens in air made
+                of glass with a given refractive index.
+            </p>
+            <p>
+                The maximum possible diameter <span class="var">D</span> of a single spherical
+                lens surface is twice its radius of curvature. This is a direct geometrical
+                limitation. The shape of a spherical lens surface is a slice cut off of a sphere
+                whose radius is the lens surface's radius of curvature. The diameter of the resulting
+                lens surface is determined by how far from the center of the sphere this slice
+                occurs. The largest possible lens surface diameter is obtained by cutting the sphere
+                in half exactly at the center, giving the lens surface the shape of a full hemisphere
+                and a diameter equal to the diameter of the sphere (which is twice the radius of
+                curvature). Simply,
+                <span class="var">D</span><span class="sym">=</span><span class="num">2</span><span class="var">R</span>.
+            </p>
+            <p>
+                The concept of a lens with the largest possible aperture can be equivalently
+                thought of as a lens with the largest possible diameter for a given focal length,
+                or as a lens with with the shortest possible focal length for a given diameter.
+                This last phrasing in particular suggests that we consider a lens with two strong,
+                convex surfaces to achieve the minimum focal length.
+                (A "strong" surface here
+                meaning a surface with a small radius of
+                curvature and a corresponding short focal length.)
+                Further, as both surfaces of this biconvex lens have the same diameter
+                and each has the smallest possible radius of curvature, then the two surfaces will be
+                equivalent to each other meaning the lens is more specifically equiconvex.
+                As we are dealing with an equiconvex lens and have now determined that each surface is
+                a hemisphere, the complete lens will be an entire sphere (generally called a "ball lens"
+                to distinguish it from all other spherical lenses).
+            </p>
+            <p> 
+                If we start with the <a href="https://en.wikipedia.org/wiki/Lens#Lensmaker's_equation">lensmaker's equation</a>
+                and the knowledge that we are constructing
+                a equiconvex lens, then
+                for a lens with focal length <span class="var">f</span> made of material with a
+                refractive index <span class="var">n</span> and two convex surfaces each with
+                a radius of curvature of magnitude <span class="var">R</span>:
+            </p>
+            <div class="eq full_line">
+                <div class="frac">
+                    <div class="num">1</div>
+                    <div class="var">f</div>
+                </div>
+                <div class="sym isolate">
+                    =
+                </div>
+                <div class="paren">
+                    <div class="var">n</div>
+                    <div class="sym">&ndash;</div>
+                    <div class="num">1</div>
+                </div>
+                <div class="paren tall">
+                    <div class="group">
+                        <div class="frac">
+                            <div class="group">
+                                <div class="num">2</div>
+                            </div>
+                            <div class="var">R</div>
+                        </div>
+                        <div class="sym">+</div>
+                        <div class="frac">
+                            <div class="group">
+                                <div class="num">2</div>
+                                <div class="var">R</div>
+                                <div class="paren">
+                                    <div class="var">n</div>
+                                    <div class="sym">&ndash;</div>
+                                    <div class="num">1</div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="var">n</div>
+                                <div class="var">R<sup><div class="num">2</div></sup></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="eq full_line">
+                <div class="var">f</div>
+                <div class="sym isolate">
+                    =
+                </div>
+                <div class="frac">
+                    <div class="group">
+                        <div class="var">n</div>
+                        <div class="var">R</div>
+                    </div>
+                    <div class="group">
+                        <div class="num">2</div>
+                        <div class="paren">
+                            <div class="var">n</div>
+                            <div class="sym">&ndash;</div>
+                            <div class="num">1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>
+                The f-number of the lens is
+                <span class="var">N</span>
+                <span class="sym">=</span>
+                <span class="var">f</span>
+                <span class="sym">/</span>
+                <span class="var">D</span>
+                <span class="sym">=</span>
+                <span class="var">f</span>
+                <span class="sym">/</span>
+                <span class="sym">(</span><span class="num">2</span><span class="var">R</span><span class="sym">)</span>,
+                and so:
+            </p>
+
+            <div class="eq full_line">
+                <div class="var">N</div>
+                <div class="sym">=</div>
+                <div class="frac">
+                    <div class="group">
+                        <div class="var">n</div>
+                        <div class="var">R</div>
+                    </div>
+                    <div class="group">
+                        <div class="num">4</div>
+                        <div class="var">R</div>
+                        <div class="paren">
+                            <div class="var">n</div>
+                            <div class="sym">&ndash;</div>
+                            <div class="num">1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sym">=</div>
+                <div class="frac">
+                    <div class="group">
+                        <div class="var">n</div>
+                    </div>
+                    <div class="group">
+                        <div class="num">4</div>
+                        <div class="paren">
+                            <div class="var">n</div>
+                            <div class="sym">&ndash;</div>
+                            <div class="num">1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                At which point we find that the f-number of a ball lens depends only
+                on the index of refraction. (Note that <span class="var">R</span>
+                does not disappear in this manner when moving beyond the realm of
+                photography and calculating numerical aperture instead of f-number.)
+            </p>
+
+            <p>
+                Taking the limit of
+                <span class="var">N</span><span class="sym">(</span><span class="var">n</span><span class="sym">)</span>
+                as <span class="var">n</span> approaches &infin; using L'H&ocirc;pital's rule immediately yields
+                the result that no matter how high the index of refraction of the material is, the maximum possible
+                f-number for the ball lens would be limited to f/0.25. In practice, the refractive index of real materials
+                that transmit visible light fall rather short of approaching infinity; they hardly even approach three.
+                Here is a small table of results for refractive indices within the range of some real materials:
+            </p>
+
+            <table>
+                <tr>
+                    <td>Material</td>
+                    <td>Refractive Index</td>
+                    <td>Max f/#</td>
+                </tr>
+                <tr>
+                    <td>Crown Glass</td>
+                    <td>1.5</td>
+                    <td>f/0.75</td>
+                </tr>
+                <tr>
+                    <td>Flint Glass</td>
+                    <td>2.0</td>
+                    <td>f/0.5</td>
+                </tr>
+                <tr>
+                    <td>Diamond</td>
+                    <td>2.4</td>
+                    <td>f/0.43</td>
+                </tr>
+            </table>
+
+            <p>
+                With a deliberate selection of the highest index flint glass available,
+                we see an instance of the infamous f/0.5. Further, the focal length
+                <span class="var">f</span>
+                determined above was measured from the principal
+                plane of the lens, which coincides with its center in this case.
+                This means that we cannot take a ball lens higher than
+                <span class="var">n</span><span class="sym">=</span><span class="num">2</span>
+                (f/0.5)
+                while maintaining a requirement that
+                <span class="var">f</span>
+                <span class="sym">&ge;</span>
+                <span class="var">R</span> for imaging. This is one of several good reasons that your camera lens is not
+                built using large spherical diamonds.
+            </p>
+
+            <div>
+                <div class="ray-diagram-label">Crown Glass Ball Lens</div>
+                <img width="100%" src="crown-glass-ball.png" alt="A ray diagram of a crown glass ball lens showing external focus">
+            </div>
+            <br>
+            <div>
+                <div class="ray-diagram-label">Diamond Ball Lens</div>
+                <img width="100%" src="diamond-ball.png" alt="A ray diagram of a diamond ball lens showing internal focus">
+            </div>
+
+            <p>
+                If the first surface of a diamond ball lens is already "too strong" alone, why
+                not simply cut the lens in half to form a planoconvex half ball lens with an external focus?
+                Unfortunately, the high refractive index will cause internal reflection to limit the usable aperture.
+                It's probably best to move on from diamond now, as this section started with
+                motivation from practical lens manufacturing and it is now only narrowly avoiding
+                a segue into positive meniscus lenses made of diamond.
+            </p>
+
+            <p>
+                At this point I must note that mainstream DSLR and mirrorless cameras
+                all have their own limits on the maximum usable f-number imposed by the
+                mount diameter and flange distance. This limit is around f/1 for
+                typical DSLR mounts and around f/0.6 for typical mirrorless mounts.
+            </p>
+
+            <p>
+                In any event, it's nice to see where f/0.5 came from for spherical glass lenses,
+                but most commerical camera lenses now contain at least one aspherical element.
+                Can an aspherical lens reach a faster f-number?
+            </p>
+
+            <h2>Aspherical Lenses</h2>
+
+            <p>
+                The extent of a spherical lens is limited because the curve closes on
+                itself. In contrast, a parabolic or hyperbolic surface does not have the same inherent
+                limit on diameter; these functions permit computing the height (sag) of a point
+                on the lens regardless of how far it is from the center. The practical limit in this
+                case is when increasing the diameter further will make a lens too thick. A prolate
+                elliptical surface falls in between these two groups, curving more gently than a sphere
+                but still re-joining itself to enclose a finite area.
+            </p>
+
+            <p>
+                For example, this spherical lens is very thick and exhibits severe spherical aberration compared to the prolate elliptical version:
+            </p>
+
+            <div>
+                <div class="ray-diagram-label">Spherical Lens, 50 mm f/1</div>
+                <img width="100%" src="cmp-sphere.png" alt="A ray diagram of thick, spherical lens with severe spherical aberration">
+            </div>
+            <br>
+            <div>
+                <div class="ray-diagram-label">Prolate Elliptical Lens, 50 mm f/1</div>
+                <img width="100%" src="cmp-prolate-ellipse.png" alt="A ray diagram of thin, prolate elliptical lens without severe spherical aberration">
+            </div>
+
+            <h3>Homemade Hyperbolic Lenses</h3>
+
+            <p>
+                This is a 10 mm f/0.4 planoconvex hyperbolic lens produced using the process I previously described
+                <a href="../3d-lenses/index.html">here</a> for producing lenses from a 3D-printed shape:
+            </p>
+
+            <img src="10mm-f04.png"
+            alt="Photograph of a 10 mm f/0.4 lens cast in epoxy" width="100%">
+
+            <img src="hyperbolic_lens_side.png"
+            alt="Photograph of a 10 mm f/0.4 lens cast in epoxy (side view)" width="100%">
+
+            <p>
+                Of course, I was also obligated to make my own 50 mm f/0.7 lens. This
+                is a single planoconvex hyperbolic lens. It is thinner
+                and provides better image quality than a 50 mm f/0.7 spherical
+                singlet lens. However, its softness and chromatic aberration pose absolutely no threat to the
+                eight element Zeiss lens.
+            </p>
+
+            <img src="50mm-f07.png"
+            alt="Photograph of a 50 mm f/0.7 lens cast in epoxy" width="100%">
+
+            <p>
+                This lens is made of cast epoxy resin with a refractive index of only about 1.5.
+                The <a href="https://en.wikipedia.org/wiki/Conic_constant">conic constant</a>
+                <span class="var">K</span> is about -2.3.
+            </p>
+
+            <p>
+                I haven't made a focus barrel/camera mount for this lens yet, but here a few
+                quick handheld freelens shots of a cactus from my 50 mm f/0.7 in front of a
+                Nikon F-mount APS-C camera body:
+            </p>
+
+            <img src="cactus1.png"
+            alt="Photograph of cactus" width="100%">
+
+            <img src="cactus3.png"
+            alt="Photograph of cactus" width="100%">
+
+            <img src="cactus2.png"
+            alt="Photograph of cactus" width="100%">
+
+            <img src="cactus4.png"
+            alt="Photograph of cactus" width="100%">
+
+            <p>
+                If you're wondering about choosing a conic constant,
+                <span class="var">K</span>
+                <span class="sym">=</span>
+                <span class="sym">-</span><span class="paren" style="display: inline;"><span class="var">n<sup>2</sup></span></span>
+                <a href="https://doi.org/10.2307/2324064">optimizes</a>
+                a planoconvex singlet for use as a telescope objective.
+            </p>
+
+            <br>
+            <a href="../index.html">Back to Index</a>
+        </div>
+    </body>
+</html>

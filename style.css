@@ -27,3 +27,7 @@ h1 {
     float: right;
     font-style: italic;
 }
+
+a[href*="wikipedia.org"] {
+    color: darkslategray;
+}
