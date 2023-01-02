@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>December 2022 Mini-Projects: Foveon Near Infrared Photography, a Polycarbonate Prism, and Telecentric Optics</title>
+        <link href="../style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="content">
+            <h1>December 2022 Mini-Projects: Foveon Near Infrared Photography, a Polycarbonate Prism, and Telecentric Optics</h1>
+            <p class="info-line">Alex Bock <span class="article-date">2023-01-02</span></p>
+
+            <h2>Foveon Near Infrared Photography</h2>
+
+            <p>
+                I designed and 3D-printed a Sigma SA locking mount adapter and a lens body
+                to mount and focus a near infrared achromatic doublet on an SD Quattro camera with a
+                <a href="https://en.wikipedia.org/wiki/Foveon_X3_sensor">Foveon</a> image sensor.
+                The reflection in the lens is a vibrant blue due to the near infrared anti-reflective coating.
+            </p>
+            <p>
+                Along with the unique sensor design, the SD Quattro is also unusual in allowing easy
+                removal of the built-in <a href="https://en.wikipedia.org/wiki/Hot_mirror">infrared-blocking filter</a>.
+                Virtually every color digital camera has a filter to block infrared light because silicon sensors
+                are inherently sensitive to near infrared light which would distort color perception, but in most cameras
+                the filter is permanently adhered to the sensor.
+            </p>
+            <p>
+                This camera is sensitive enough to near infrared to allow handheld indoor photography
+                with an 850 nm longpass filter, and outdoor tripod photography with a
+                1000 nm longpass filter.
+                Due to silicon's low quantum efficiency beyond 1000 nm, the latter filter is a dielectric
+                longpass filter with high transmission and a very sharp cut-on at 1000 nm
+                (<a href="https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=6082&pn=FELH1000">Thorlabs FELH1000</a>).
+            </p>
+
+            <img width="100%" src="nir-foveon-doublet/nir-lens.png" alt="3D-printed near infrared lens body">
+            <img width="100%" src="nir-foveon-doublet/sigma-camera-lens-parts.png" alt="3D-printed near infrared lens parts and camera">
+
+            <p>
+                The first thing I noticed looking around indoors with the 850 nm longpass filter was that
+                a black anodized aluminum flashlight had the appearance of a bare, reflective metal surface
+                in infrared (left: visible light, right: near infrared 850 nm longpass):
+            </p>
+
+            <img width="100%" src="nir-foveon-doublet/flashlight-vis-vs-nir850.png" alt="Side-by-side of flashlight in visible light and near infrared">
+
+            <p>
+                Looking outside with the 1000 nm longpass filter, a pine tree appears bright white against a black sky (note that the narrow
+                depth of field is due to imaging with a single achromatic doublet wide open at f/2):
+            </p>
+
+            <img width="100%" src="nir-foveon-doublet/pine-tree-sky-nir1000.png" alt="Photo of a pine tree and the sky in near infrared">
+
+            <h2>Polycarbonate Prism</h2>
+            <p>
+                I milled and polished an equilateral dispersing prism out of polycarbonate
+                for a future project to measure the material's
+                <a href="https://en.wikipedia.org/wiki/Abbe_number">Abbe number</a>.
+            </p>
+
+            <img width="100%" src="polycarbonate-prism/milling.png" alt="Milling a polycarbonate prism">
+            <img width="100%" src="polycarbonate-prism/polished.png" alt="Refraction of a laser through a polycarbonate prism">
+
+            <h2>Telecentric Optics</h2>
+
+            <p>
+                Holding an ordinary magnifying glass far in front of a phone camera creates a simple
+                <a href="https://en.wikipedia.org/wiki/Telecentric_lens">telecentric</a> optical system
+                where objects at different distances from the camera can be made to appear the same size,
+                or more distant objects can be made to appear larger than closer objects.
+            </p>
+
+            <p>Scene:</p>
+
+            <img width="100%" src="telecentric/setup.png" alt="Two bolts at different positions on a table">
+
+            <p>Normal photo (endocentric):</p>
+
+            <img width="100%" src="telecentric/endocentric.png" alt="An ordinary photo of the two bolts">
+
+            <p>Telecentric view:</p>
+
+            <img width="100%" src="telecentric/telecentric.png" alt="A telecentric photo of the two bolts">
+
+            <p>Hypercentric view:</p>
+
+            <img width="100%" src="telecentric/hypercentric.png" alt="A hypercentric photo of the two bolts">
+
+            <p></p>
+
+            <br>
+            <a href="../index.html">Back to Index</a>
+        </div>
+    </body>
+</html>
