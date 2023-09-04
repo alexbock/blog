@@ -29,5 +29,14 @@ h1 {
 }
 
 a[href*="wikipedia.org"] {
-    color: darkslategray;
+    color: dimgray;
+}
+
+a {
+    text-decoration: none;
+    color: royalblue;
+}
+
+a:visited {
+    color: rebeccapurple;
 }
