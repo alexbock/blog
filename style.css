@@ -3,10 +3,12 @@ body {
     justify-content: center;
     font-family: sans-serif;
     background-color: #F5FFFA;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 #content {
-    width: 80ch;
+    max-width: 80ch;
 }
 
 h1 {
@@ -19,10 +21,6 @@ h1 {
     padding-top: 0.5em;
 }
 
-#article-list li {
-    margin-bottom: 0.5em;
-}
-
 .article-date {
     float: right;
     font-style: italic;
@@ -31,12 +29,10 @@ h1 {
 a[href*="wikipedia.org"] {
     color: dimgray;
 }
-
 a {
     text-decoration: none;
     color: royalblue;
 }
-
 a:visited {
     color: rebeccapurple;
 }

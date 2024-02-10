@@ -1,0 +1,47 @@
+#article-list li {
+    margin-bottom: 0.5em;
+}
+
+.indexCategoryOptics:before,
+.indexCategoryTravel:before,
+.indexCategoryGeneral:before,
+.indexCategorySoftwareDevelopment:before {
+    content: "■";
+    padding-right: 0.5em;
+}
+.indexCategoryOptics:before {
+    color: blue;
+}
+.indexCategoryTravel:before {
+    color: green;
+}
+.indexCategoryGeneral:before {
+    color: darkred;
+}
+.indexCategorySoftwareDevelopment:before {
+    color: darksalmon;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    margin: 1em;
+}
+footer span {
+    padding-right: 1.2em;
+}
+footer span:last-child {
+    padding-right: 0em;
+}
+#content {
+    flex: 1 0 auto;
+}
+body {
+    flex-direction: column;
+    align-items: center;
+}
+html,body {
+    height: 100%;
+    margin: 0px;
+}
